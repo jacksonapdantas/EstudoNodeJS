@@ -1,8 +1,6 @@
 var mysql = require('mysql');//importando o mysql
 
-module.exports = function(){
-
-
+var connMySQL = function(){
 	//criando a conexão com mysql (estrutura Jason)
 	return mysql.createConnection({
 		host : 'localhost',
@@ -10,6 +8,9 @@ module.exports = function(){
 		password : '1234',
 		database : 'portal_noticias'
 	});
+}
 
+module.exports = function(){
+	return connMySQL;
 }
 
